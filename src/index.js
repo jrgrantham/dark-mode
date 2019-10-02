@@ -7,24 +7,6 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
-const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() => {
-    const item = window.localStorage.getItem(key);
-    return item ? JSON.parse(item) : initialValue;
-  });
-
-  const setValue = value => {
-    setStoredValue(value);
-    window.localStorage.setItem(key, JSON.stringify(value))
-  }
-
-  return [storedValue, setValue];
-};
-
-const useDarkMode = () => {
-  
-}
-
 const App = () => {
   const [coinData, setCoinData] = useState([]);
 
